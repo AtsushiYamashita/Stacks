@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// Scene move action component.
 /// </summary>
+[System.Serializable]
 public class SceneMove : MonoBehaviour
 {
     /// <summary>
@@ -21,6 +22,7 @@ public class SceneMove : MonoBehaviour
         if (!isScene.IsValid())
         {
             SceneManager.LoadScene( mMoveTo );
+            return;
         }
 
         string errorMSG = "Scene move can read next scene. You should check scene name. ";
