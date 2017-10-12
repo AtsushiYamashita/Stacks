@@ -9,7 +9,7 @@ namespace AY_Util
     /// <summary>
     /// String utilities library.
     /// </summary>
-    public class StringUtil
+    public static class StringUtil
     {
         /// <summary>
         /// Convert to title case.

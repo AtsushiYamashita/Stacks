@@ -11,7 +11,7 @@ namespace AY_Util
     /// ArrayList型を扱うための汎用的な操作の型。
     /// </summary>
     /// <typeparam name="T">操作対象とするArrayListの型</typeparam>
-    public class ArrayListUtil<T>
+    public static class ArrayListUtil<T>
     {
         public delegate T MinFunc ( T t1, T t2 );
 

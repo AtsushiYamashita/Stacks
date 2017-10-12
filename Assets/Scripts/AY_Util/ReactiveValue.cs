@@ -17,18 +17,18 @@ namespace AY_Util
         /// 変更時に呼び出される関数のリスト
         /// </summary>
         [UnityEngine.SerializeField]
-        private List<Action> _actions = new List<Action>();
+        private List<Action> mActions = new List<Action>();
 
         /// <summary>
         /// 変更を確認するためのイコール判定関数
         /// </summary>
-        private EqualFunc _equals = null;
+        private EqualFunc mfEquals = null;
 
         /// <summary>
         /// 監視対象の値
         /// </summary>
         [UnityEngine.SerializeField]
-        private T _value;
+        private T mValue;
 
         /// <summary>
         /// 初期値を設定して作成する。
@@ -36,7 +36,7 @@ namespace AY_Util
         /// <param name="initValue">初期値</param>
         public ReactiveValue ( T initValue )
         {
-            _value = initValue;
+            mValue = initValue;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace AY_Util
         /// <returns>内部の値</returns>
         public T Get ( )
         {
-            return _value;
+            return mValue;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace AY_Util
         /// <returns>メソッドチェーン用に自身のインスタンス</returns>
         public ReactiveValue<T> SetEquals ( EqualFunc efunc )
         {
-            _equals = efunc;
+            mfEquals = efunc;
             return this;
         }
 
@@ -81,7 +81,7 @@ namespace AY_Util
         /// <returns>メソッドチェーン用に自身のインスタンス</returns>
         public ReactiveValue<T> Subscribe ( T instance, Action aFunc )
         {
-            _actions.Add( aFunc );
+            mActions.Add( aFunc );
             return this;
         }
 
@@ -91,10 +91,10 @@ namespace AY_Util
         /// <param name="newValue">代入したい値。</param>
         public void Overwrite ( T newValue )
         {
-            if (_equals == null) throw new System.Exception( "Unset equals function" );
-            if (_equals( _value, newValue )) return;
-            _actions.ForEach( ( Action a ) => { a( _value, newValue ); } );
-            _value = newValue;
+            if (mfEquals == null) throw new System.Exception( "Unset equals function" );
+            if (mfEquals( mValue, newValue )) return;
+            mActions.ForEach( ( Action a ) => { a( mValue, newValue ); } );
+            mValue = newValue;
         }
     }
 }

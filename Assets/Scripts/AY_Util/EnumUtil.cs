@@ -10,7 +10,7 @@ namespace AY_Util
     /// 列挙型を扱う場合の汎用的なライブラリ。
     /// </summary>
     /// <typeparam name="T">操作対象とする列挙型</typeparam>
-    public class EnumUtil<T>
+    public static class EnumUtil<T>
     {
         /// <summary>
         /// 列挙型の配列上のインデックスを指定して取得する。

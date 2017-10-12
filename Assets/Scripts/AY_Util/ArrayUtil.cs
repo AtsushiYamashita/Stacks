@@ -8,7 +8,7 @@ namespace AY_Util
     /// 配列を扱う処理をまとめた汎用クラス
     /// </summary>
     /// <typeparam name="T">配列要素の型名</typeparam>
-    public class ArrayUtil<T>
+    public static class ArrayUtil<T>
     {
         /// <summary>
         /// 配列の要素を一部だけ安全に抜き出す。
