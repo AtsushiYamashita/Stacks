@@ -9,7 +9,7 @@ namespace AY_Util
     /// <summary>
     /// Random utilities library.
     /// </summary>
-    public class RandUtil
+    public static class RandUtil
     {
         public delegate float Type ( );
 
