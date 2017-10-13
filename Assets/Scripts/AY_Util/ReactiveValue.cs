@@ -79,7 +79,7 @@ namespace AY_Util
         /// </summary>
         /// <param name="aFunc">追加するアクションの関数</param>
         /// <returns>メソッドチェーン用に自身のインスタンス</returns>
-        public ReactiveValue<T> Subscribe ( T instance, Action aFunc )
+        public ReactiveValue<T> Subscribe ( Action aFunc )
         {
             mActions.Add( aFunc );
             return this;
